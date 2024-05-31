@@ -1,0 +1,24 @@
+package iterator;
+
+public class PatientIterator implements Iterator {
+	private List<PatientRecord> records;
+    private int currentIndex = 0;
+
+    public PatientIterator(List<PatientRecord> records) {
+        this.records = records;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return currentIndex < records.size();
+    }
+
+    @Override
+    public PatientRecord next() {
+        if (this.hasNext()) {
+            return records.get(currentIndex++);
+        }
+        return null;
+    }
+
+}

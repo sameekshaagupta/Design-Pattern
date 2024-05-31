@@ -1,0 +1,17 @@
+package iterator;
+
+public class PatientContainerImpl implements PatientContainer {
+	private List<PatientRecord> patientRecords = new ArrayList<>();
+
+    public PatientContainerImpl() {
+        // Populate the container with sample patient records
+        patientRecords.add(new PatientRecordImpl("John Doe", 35, "Hypertension"));
+        patientRecords.add(new PatientRecordImpl("Jane Smith", 45, "Diabetes"));
+        patientRecords.add(new PatientRecordImpl("Michael Johnson", 50, "Arthritis"));
+    }
+
+    @Override
+    public Iterator getIterator() {
+        return new PatientIterator(patientRecords);
+    }
+}

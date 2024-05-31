@@ -1,0 +1,29 @@
+package phone;
+
+public class PhoneRepository implements PhoneContainer {
+   private Phone[] phones; 
+   public PhoneRepository(Phone[] phones) {
+      this.phones = phones;
+   }
+
+   @Override
+   public PhoneIterator getIterator() {
+      return (PhoneIterator) new PhoneIteratorImpl();
+   }
+
+   private class PhoneIteratorImpl implements PhoneIterator {
+      private int index;
+      @Override
+      public boolean hasNext() {
+         return index < phones.length;
+      }
+
+      @Override
+      public Phone next() {
+         if (hasNext()) {
+            return phones[index++];
+         }
+         return null;
+      }
+   }
+}

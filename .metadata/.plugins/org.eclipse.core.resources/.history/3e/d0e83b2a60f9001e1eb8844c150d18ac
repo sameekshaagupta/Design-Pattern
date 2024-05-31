@@ -1,0 +1,5 @@
+package phone;
+
+public interface ContactList {
+    public Iterator getIterator();
+}

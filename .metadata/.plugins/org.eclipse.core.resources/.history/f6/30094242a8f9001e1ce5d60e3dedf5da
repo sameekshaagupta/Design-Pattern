@@ -1,0 +1,16 @@
+package iterator;
+
+public class IteratorPatternDemo {
+	 public static void main(String[] args) {
+	        PatientContainer patientContainer = new PatientContainerImpl();
+
+	        // Iterate over patient records using the iterator
+	        for (Iterator iter = patientContainer.getIterator(); iter.hasNext();) {
+	            PatientRecord record = iter.next();
+	            System.out.println("Patient Name: " + record.getPatientName() +
+	                               ", Age: " + record.getPatientAge() +
+	                               ", Medical Condition: " + record.getMedicalCondition());
+	        }
+	    }
+
+}

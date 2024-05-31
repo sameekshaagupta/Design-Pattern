@@ -1,0 +1,6 @@
+package name;
+
+public class Iterator {
+	 public boolean hasNext();
+	 public Object next();
+}
